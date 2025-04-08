@@ -1,5 +1,14 @@
-// TrialMathTutor.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/* 
+Filename: TrialMathTutor.cpp : This file contains the 'main' function.Program execution begins and ends there.
+Programmer: Morgan Thorne
+Date: April 2025
+Requirements
+Write program that can be used as a math tutor
+1: Program should display a menu to choose whether two random integers are added, subtracted, muilitplied, or divided and have an exit program input
+2: Program should pause while students works on problem
+3: When student is ready they can enter their answer and the program will either show if its correct or incorrect
+4: Use at least 3 modules
+*/
 
 #include <iostream>
 #include <iomanip>
@@ -13,7 +22,7 @@ int RandomNumberGenerator(int x, int y);
 bool DisplayEquation(int Rx, int Ry, char Operand, double Result);
 
 
-
+//Calls functions and uses cases to change equations based on users menu choice and the exit option
 int main()
 {
     int choice;
@@ -133,7 +142,7 @@ int RandomNumberGenerator(int x, int y) {
     return randomInt(R);
 }
 
-//Displays Equation to user
+//Displays Equation to user and uses bool value to return value to main to display whether the answer is right or wrong
 bool DisplayEquation(int Rx, int Ry, char Operand, double Result) {
     int answer;
     

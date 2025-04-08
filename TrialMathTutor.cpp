@@ -52,41 +52,54 @@ int main()
 
             }
 
+            bool correct = false;
+
 
             switch (choice) {
             case 1: {
-                DisplayEquation(Xvariable, Yvariable, Operand, (Xvariable + Yvariable));
                 char Operand = '+';
+                correct = DisplayEquation(Xvariable, Yvariable, Operand, (Xvariable + Yvariable));
             }
                 break;
             case 2: {
-                DisplayEquation(Xvariable, Yvariable, Operand, (Xvariable - Yvariable));
                 char Operand = '-';
+                correct = DisplayEquation(Xvariable, Yvariable, Operand, (Xvariable - Yvariable));
+                
             }
                 break;
             case 3: {
-                DisplayEquation(Xvariable, Yvariable, Operand, (Xvariable * Yvariable));
                 char Operand = 'x';
+                correct = DisplayEquation(Xvariable, Yvariable, Operand, (Xvariable * Yvariable));
+                
             }
                 break;
             case 4: {
-                DisplayEquation(Xvariable, Yvariable, Operand, (Xvariable / Yvariable));
+                char Operand = '/';
+                correct = DisplayEquation(Xvariable, Yvariable, Operand, (Xvariable / Yvariable));
+            
             }
                 break;
-                char Operand = '/'; 
+            case 5: {
+                cout << "Thank you for using Math Tutor V3.0";
+                return 0;
+
+            }
+
+            }
+            
+            if (correct) {
+                    cout << "Correct!\n";
+            
+            }
+            else {
+                
             }
         } 
 
         while (choice != ExitProgram);
         return 0;
 
-        if (DisplayEquation) {
-            cout << "Correct!\n";
-        }
-        else {
-            cout << "Incorrect!\nThe correct answer is  ";
-        }
-
+        
 
       
 
@@ -127,14 +140,16 @@ bool DisplayEquation(int Rx, int Ry, char Operand, double Result) {
     cout << setw(45) << right << " " << setw(9) << right << Rx << endl;
     cout << setw(45) << right << " " << setw(9) << right << Ry << endl;
     cout << setw(45) << right << " " << Operand << "_________\n";
-    cout << setw(45) << right << "      ";
+    cout << setw(52) << right << " " << setw(9) << right;
     cin >> answer;
     if (answer == Result) {
         return true;
     }
     else
+
+        cout << "Incorrect!\nThe correct answer is " << Result << endl;
         return false;
-    
+        
 }
 
 
